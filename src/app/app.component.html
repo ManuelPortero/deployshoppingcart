@@ -1,0 +1,54 @@
+<div class="row bg-dark">
+  <div class="col text-center">
+  <br>
+  <img width="80px" src="https://lh3.googleusercontent.com/proxy/x3F5oq9oxOhkrlKxSfK8XGvXYb41AFY5l1e8mwrKGqv13QDdDddpRZj_RSWsQgBhNe2lA_i1hGTKaK1jz0QM_4uilUtrsu_nw-cC9yaijqEpjxFJ0fq7DXuj6zsnZKL6V-Nuz9koCvhTI1WuVQ" alt="">
+  
+  </div>
+  <div class="col">
+    <br><br>
+    <h1 class= "text-center text-white">{{title}}</h1>
+    
+  </div>
+  <div class="col text-center">
+    <br>
+    <img width="80px" src="https://cdn.worldvectorlogo.com/logos/angular-icon.svg" alt="">
+  </div>
+  <br><br>
+</div>
+
+
+
+
+
+
+<div class="row bg-dark">
+  
+  <div class="col">
+    <br>
+    <p class="text-center text-white">Do you want to add a new task ?</p>
+  </div>
+  <div class="col">
+    <br>
+    <input type="text" #newTodo>
+    <button class="text-white button btn-info" (click)="addTodo(newTodo.value); newTodo.value=''">Create Task</button>    
+  </div>
+  <br><br>
+</div>
+
+
+<table class="table bg-light">
+ <tr>
+  <td>Label</td>
+  <td>Priority</td>
+  <td>Done</td>
+  <th>Actions</th>
+ </tr>
+<tr *ngFor="let todo of todos">
+ <td>{{todo.label}}</td>
+ <td>{{todo.priority}}</td>
+ <td>{{todo.done ? '&#10003;' : '&#10005;'}}</td>
+  <td>
+    <button class="text-white button btn-danger"(click)="deleteTodo(todo)"> delete </button>
+  </td>
+</tr>
+</table>
